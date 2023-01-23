@@ -8,6 +8,7 @@ public class MoviePosterManager {
     public MoviePosterManager() {
 
     }
+
     public MoviePosterManager(int limit) {
         if (limit > 0) {
             this.limit = limit;
@@ -40,7 +41,7 @@ public class MoviePosterManager {
 
 
         for (int i = 0; i < reversed.length; i++) {
-            reversed[i] = movies[movies.length -1 -i];
+            reversed[i] = movies[movies.length - 1 - i];
         }
         return reversed;
     }

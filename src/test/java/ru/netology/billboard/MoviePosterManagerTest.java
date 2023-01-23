@@ -36,7 +36,7 @@ public class MoviePosterManagerTest {
     @Test
     public void shouldAddMovies() {
 
-        String[] expected = { movie1, movie2, movie3, movie4, movie5, movie6, movie7, movie8, movie9, movie10 };
+        String[] expected = {movie1, movie2, movie3, movie4, movie5, movie6, movie7, movie8, movie9, movie10};
         String[] actual = manager.findAll();
 
         Assertions.assertArrayEquals(expected, actual);
@@ -46,7 +46,7 @@ public class MoviePosterManagerTest {
     @Test
     public void shouldAddMoviesInReverseOrder() {
 
-        String[] expected = { movie10, movie9, movie8, movie7, movie6, movie5, movie4, movie3, movie2, movie1 };
+        String[] expected = {movie10, movie9, movie8, movie7, movie6, movie5, movie4, movie3, movie2, movie1};
         String[] actual = manager.findLast();
 
         Assertions.assertArrayEquals(expected, actual);
