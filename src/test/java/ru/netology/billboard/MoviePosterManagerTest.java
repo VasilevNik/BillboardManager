@@ -51,4 +51,5 @@ public class MoviePosterManagerTest {
 
         Assertions.assertArrayEquals(expected, actual);
     }
+
 }
