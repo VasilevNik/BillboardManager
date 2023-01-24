@@ -5,7 +5,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class MoviePosterManagerTest {
-    MoviePosterManager manager = new MoviePosterManager();
 
     String movie1 = "Bloodshot";
     String movie2 = "Onward";
@@ -17,9 +16,12 @@ public class MoviePosterManagerTest {
     String movie8 = "Avatar";
     String movie9 = "The Terminator";
     String movie10 = "The Matrix";
+    String movie11 = "Alien";
 
-    @BeforeEach
-    public void setup() {
+    @Test
+    public void shouldAddMovies() {
+
+        MoviePosterManager manager = new MoviePosterManager();
 
         manager.addMovie(movie1);
         manager.addMovie(movie2);
@@ -31,20 +33,28 @@ public class MoviePosterManagerTest {
         manager.addMovie(movie8);
         manager.addMovie(movie9);
         manager.addMovie(movie10);
-    }
-
-    @Test
-    public void shouldAddMovies() {
 
         String[] expected = {movie1, movie2, movie3, movie4, movie5, movie6, movie7, movie8, movie9, movie10};
         String[] actual = manager.findAll();
 
         Assertions.assertArrayEquals(expected, actual);
-
     }
+
 
     @Test
     public void shouldAddMoviesInReverseOrder() {
+        MoviePosterManager manager = new MoviePosterManager();
+        manager.addMovie(movie1);
+        manager.addMovie(movie2);
+        manager.addMovie(movie3);
+        manager.addMovie(movie4);
+        manager.addMovie(movie5);
+        manager.addMovie(movie6);
+        manager.addMovie(movie7);
+        manager.addMovie(movie8);
+        manager.addMovie(movie9);
+        manager.addMovie(movie10);
+
 
         String[] expected = {movie10, movie9, movie8, movie7, movie6, movie5, movie4, movie3, movie2, movie1};
         String[] actual = manager.findLast();
@@ -52,4 +62,43 @@ public class MoviePosterManagerTest {
         Assertions.assertArrayEquals(expected, actual);
     }
 
+    @Test
+    public void shouldAddElevenMoviesInReverseOrder() {
+        MoviePosterManager manager = new MoviePosterManager();
+        manager.addMovie(movie1);
+        manager.addMovie(movie2);
+        manager.addMovie(movie3);
+        manager.addMovie(movie4);
+        manager.addMovie(movie5);
+        manager.addMovie(movie6);
+        manager.addMovie(movie7);
+        manager.addMovie(movie8);
+        manager.addMovie(movie9);
+        manager.addMovie(movie10);
+        manager.addMovie(movie11);
+
+        String[] expected = {movie11, movie10, movie9, movie8, movie7, movie6, movie5, movie4, movie3, movie2};
+        String[] actual = manager.findLast();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldAddNineMoviesInReverseOrder() {
+        MoviePosterManager manager = new MoviePosterManager();
+        manager.addMovie(movie1);
+        manager.addMovie(movie2);
+        manager.addMovie(movie3);
+        manager.addMovie(movie4);
+        manager.addMovie(movie5);
+        manager.addMovie(movie6);
+        manager.addMovie(movie7);
+        manager.addMovie(movie8);
+        manager.addMovie(movie9);
+
+        String[] expected = {movie9, movie8, movie7, movie6, movie5, movie4, movie3, movie2, movie1};
+        String[] actual = manager.findLast();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
 }
